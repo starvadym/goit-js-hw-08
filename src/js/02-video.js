@@ -25,7 +25,7 @@ const currentTime = localStorage.getItem('videoplayer-current-time');
 // для того чтобы возобновить воспроизведение с сохраненной позиции.
 
 if (currentTime) {
-  player.setCurrentTime(currentTime);
+  player.setCurrentTime(currentTime || 0);
 }
 
 
