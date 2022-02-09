@@ -50,15 +50,58 @@ form.addEventListener("submit", onFormSubmit);
 
 function onFormSubmit(e) {
   e.preventDefault();
+  // const form = e.target.closest('form');
+  // const formData = new FormData(form);
+  // const finalData = {};
 
-  const newObj = {};
-    newObj[emailInput.name]= e.target.email.value;
-    newObj[messageInput.name] = e.target.message.value;
+  // for (const [key, value] of formData.entries()) {
+  //   finalData[key] = value;
+  // }
 
-  console.log(newObj);
+  // const newObj = {};
+  //   newObj[emailInput.name]= e.target.email.value;
+  //   newObj[messageInput.name] = e.target.message.value;
+  const data = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY));
+  console.log(data);
+  //console.log(newObj);
   localStorage.removeItem(LOCALSTORAGE_KEY);
   e.target.reset();
 }
 
 
+// git add .
+// git commit -m "Do commit"
+// git push
+//------------------------------------------------------------
+//import throttle from "lodash.throttle";
+// const formInputRef = document.querySelector('.feedback-form');
 
+// formInputRef.addEventListener('submit', onFormSubmit);
+// formInputRef.addEventListener('input', throttle(onTextAreaInput, 500));
+
+
+// let dataLS = localStorage.getItem("feedback-form-state");
+
+// if (dataLS) {
+//     const data = JSON.parse(dataLS);
+//     formInputRef.elements.email.value = data.email;
+//     formInputRef.elements.message.value = data.message;
+
+// };
+
+
+// function onTextAreaInput(e) {
+//  const formData = {
+//         email: formInputRef.elements.email.value,
+//         message: formInputRef.elements.message.value
+//     }
+//     localStorage.setItem("feedback-form-state", JSON.stringify(formData));
+// }
+
+// function onFormSubmit(e) {
+//     e.preventDefault();
+//     data = JSON.parse(localStorage.getItem("feedback-form-state"));
+//     console.log(data);
+//     localStorage.removeItem("feedback-form-state");
+//     e.target.reset();
+// }
